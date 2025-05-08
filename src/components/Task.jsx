@@ -1,4 +1,4 @@
-export const Task = () => {
+export const Task = ({ task }) => {
   return (
     <div
       style={{
@@ -6,6 +6,7 @@ export const Task = () => {
         gap: "10px",
         height: "62px",
         width: "345px",
+        borderRadius: "20px",
         backgroundColor: "rgb(208, 210, 213)",
         justifyContent: "space-between",
       }}
@@ -16,7 +17,7 @@ export const Task = () => {
         }}
       >
         <input type="checkbox" placeholder="new text" />
-        <div style={{ paddingTop: "20px" }}></div>
+        <div style={{ paddingTop: "20px" }}>{task.taskName}</div>
       </div>
       <div
         style={{
