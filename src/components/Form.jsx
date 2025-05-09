@@ -10,9 +10,9 @@ export const Form = ({ setTaskList }) => {
     const newTask = {
       id: new Date(),
       taskName: inputValue,
-      // isCompleted: false,
+      isCompleted: false,
     };
-    setTaskList([newTask]);
+    setTaskList((prevTaskList) => [...prevTaskList, newTask]);
     setInputValue("");
   };
   return (

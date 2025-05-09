@@ -4,7 +4,16 @@ import { useState } from "react";
 
 export default function Home() {
   const [taskList, setTaskList] = useState([]);
-  console.log(taskList);
+  const removeTaskById = () => {};
+
+  const ToggleCheckBox = (id) => {
+    const toggledTask = taskList.map((task) =>
+      task.id === id
+        ? { ...task, isCompleted: !task.isCompleted }
+        : task.isCompleted
+    );
+    setTaskList(toggledTask);
+  };
   return (
     <div
       style={{
@@ -20,7 +29,11 @@ export default function Home() {
     >
       <Form setTaskList={setTaskList} taskList={taskList} />
       {taskList.map((task) => (
-        <Task task={task} />
+        <Task
+          task={task}
+          removeTaskById={removeTaskById}
+          ToggleCheckBox={ToggleCheckBox}
+        />
       ))}
       <div style={{ display: "flex", gap: "5px" }}>
         <div>Powered by</div>

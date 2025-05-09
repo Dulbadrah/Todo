@@ -1,4 +1,7 @@
-export const Task = ({ task }) => {
+export const Task = ({ task, removeTaskById, ToggleCheckBox }) => {
+  const handleToggleCheckBox = () => {
+    ToggleCheckBox(task.id);
+  };
   return (
     <div
       style={{
@@ -16,7 +19,12 @@ export const Task = ({ task }) => {
           display: "flex",
         }}
       >
-        <input type="checkbox" placeholder="new text" />
+        <input
+          type="checkbox"
+          placeholder="new text"
+          checked={task.isCompleted}
+          onChange={handleToggleCheckBox}
+        />
         <div style={{ paddingTop: "20px" }}>{task.taskName}</div>
       </div>
       <div
@@ -26,7 +34,7 @@ export const Task = ({ task }) => {
           paddingTop: "20px",
         }}
       >
-        <button>delete</button>
+        <button onClick={() => removeTaskById}>delete</button>
       </div>
     </div>
   );
