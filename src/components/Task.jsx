@@ -1,41 +1,42 @@
-export const Task = ({ task, removeTaskById, ToggleCheckBox }) => {
+export const Task = ({ task, removeTaskById, toggleCheckBox }) => {
   const handleToggleCheckBox = () => {
-    ToggleCheckBox(task.id);
+    toggleCheckBox(task.id);
   };
+
+  const handleDelete = () => {
+    removeTaskById(task.id);
+  };
+
   return (
     <div
       style={{
         display: "flex",
-        gap: "10px",
-        height: "62px",
-        width: "345px",
-        borderRadius: "20px",
-        backgroundColor: "rgb(208, 210, 213)",
         justifyContent: "space-between",
+        width: "300px",
+        backgroundColor: "#F3F4F6",
+        padding: "12px 16px",
+        alignItems: "center",
+        borderRadius: "8px",
+        marginBottom: "8px",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
         <input
           type="checkbox"
-          placeholder="new text"
           checked={task.isCompleted}
           onChange={handleToggleCheckBox}
         />
-        <div style={{ paddingTop: "20px" }}>{task.taskName}</div>
-      </div>
-      <div
-        style={{
-          width: "67px",
-          height: "30px",
-          paddingTop: "20px",
-        }}
-      >
-        <button onClick={() => removeTaskById}>delete</button>
-      </div>
+        <p
+          style={{
+            margin: 0,
+            textDecoration: task.isCompleted ? "line-through" : "none",
+            color: task.isCompleted ? "#9CA3AF" : "#111827",
+          }}
+        >
+          {task.taskName}
+        </p>
+      </div>  <button style={{borderRadius:"5px"}} onClick={handleDelete} >Delete</button>
+
     </div>
   );
 };
