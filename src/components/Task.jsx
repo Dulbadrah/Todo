@@ -37,7 +37,7 @@ export const Task = ({ task, removeTaskById, toggleCheckBox }) => {
         </p>
       </div>{" "}
       <button
-        style={{ borderRadius: "5px", backgroundColor: "111827" }}
+        style={{ borderRadius: "5px",}}
         onClick={handleDelete}
       >
         Delete
