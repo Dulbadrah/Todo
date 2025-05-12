@@ -5,7 +5,7 @@ export const Filter = ({ setFilter }) => {
       {filterOptions.map((filter, index) => (
         <div key={index}>
           <button
-            style={{ backgroundColor: "cray", borderRadius: "5px", color: "white" }}
+            style={{ backgroundColor: "cray", borderRadius: "5px", color: "black" }}
             onClick={() => setFilter(filter)}
           >
             {filter}
