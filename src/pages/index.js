@@ -45,7 +45,8 @@ export default function Home() {
         gap: "10px",
         border: "solid 1px black",
         borderRadius: "30px",
-        backroundcolor: "linen"
+        backgroundColor: "linen",
+        
       }}
     >
       <h1>Todo List</h1>
