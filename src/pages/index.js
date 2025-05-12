@@ -8,9 +8,8 @@ export default function Home() {
   const [filter, setFilter] = useState("all");
 
   const handleDelete = (id) => {
-  setTaskList((prevTasks) => prevTasks.filter((task) => task.id !== id));
-};
-
+    setTaskList((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
 
   const toggleCheckBox = (id) => {
     const toggledTask = taskList.map((task) =>
@@ -33,11 +32,10 @@ export default function Home() {
   });
 
   return (
-  
     <div
       style={{
         display: "flex",
-        padding:"20px",
+        padding: "20px",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
@@ -45,30 +43,29 @@ export default function Home() {
         width: "100%",
         margin: "auto",
         gap: "10px",
-        border:"solid 1px black",
-        borderRadius:"30px"
+        border: "solid 1px black",
+        borderRadius: "30px",
       }}
     >
-        
       <h1>Todo List</h1>
 
       <Form setTaskList={setTaskList} taskList={taskList} />
 
       <Filter filter={filter} setFilter={setFilter} />
 
-
       {filteredTask.map((task, id) => (
-        <Task 
+        <Task
           key={id}
           task={task}
           removeTaskById={handleDelete}
           toggleCheckBox={toggleCheckBox}
-          
         />
       ))}
-      <div style={{display:"flex",gap:"10px"}}>
+      <div style={{ display: "flex", gap: "10px" }}>
         <p>Poowered By</p>
-         <a href="" style={{paddingTop:"15px"}}>Pinecone academy</a>
+        <a href="" style={{ paddingTop: "15px" }}>
+          Pinecone academy
+        </a>
       </div>
     </div>
   );
