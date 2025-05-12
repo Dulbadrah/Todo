@@ -35,8 +35,13 @@ export const Task = ({ task, removeTaskById, toggleCheckBox }) => {
         >
           {task.taskName}
         </p>
-      </div>  <button style={{borderRadius:"5px"}} onClick={handleDelete} >Delete</button>
-
+      </div>{" "}
+      <button
+        style={{ borderRadius: "5px", backgroundColor: "111827" }}
+        onClick={handleDelete}
+      >
+        Delete
+      </button>
     </div>
   );
 };
