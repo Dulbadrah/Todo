@@ -1,4 +1,4 @@
-import { Filter } from "@/components/Filter";
+import { Filter } from "@/components/filter";
 import { Form } from "@/components/Form";
 import { Task } from "@/components/Task";
 import { useState } from "react";
